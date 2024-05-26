@@ -1,0 +1,154 @@
+/* ======================================================= google fonts ======================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+
+/* ==================================================== global variables ==================================================== */
+:root {
+  --light-grey: #212121;
+  --white-text: #ececec;
+  --ultra-grey: #909090;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Code", monospace;
+}
+
+body {
+  background: var(--light-grey);
+  color: var(--white-text);
+}
+
+.chats_container {
+  max-width: 50vw;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  overflow-y: scroll;
+  max-height: 80vh;
+}
+
+.outgoing_chats {
+  background: #2f2f2f;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.chat_maincontentbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat_profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userprofilepic {
+  height: 5%;
+  width: 5%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.chat_username_title {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.chat_contentbox {
+  padding: 5px 43px;
+}
+
+.edit_icondiv {
+  padding: 0 2em;
+  opacity: 0;
+}
+
+.edit_icondiv i {
+  cursor: pointer;
+  font-size: 0.7em;
+}
+
+.chat_maincontentbox:hover .edit_icondiv {
+  opacity: 1;
+}
+
+.prompt_container {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+#chatgpt_message {
+  font-size: 0.7em;
+}
+
+.textarea_container {
+  width: 100%;
+  position: relative;
+}
+
+#chat_input_textarea_prompt {
+  width: 100%;
+  background: transparent;
+  outline: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  border: 1px solid var(--ultra-grey);
+  resize: none;
+  color: var(--white-text);
+}
+
+.textarea_container i {
+  position: absolute;
+  right: 2%;
+  bottom: 50%;
+  background: #676767;
+  padding: 5px 8px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: var(--ultra-grey);
+}
+
+.textarea_container i.valid_input {
+  background: #fff;
+  color: var(--light-grey);
+}
+
+/* ================================================== api response animation ================================================== */
+.apiresponse_typing_animation {
+  display: flex;
+  gap: 5px;
+}
+
+.apiresponse_typingdot {
+  height: 5px;
+  width: 5px;
+  border-radius: 5px;
+  background: var(--white-text);
+  animation: apiresponse_typingdot 1.5s var(--animationdelay) ease-in-out
+    infinite;
+}
+
+@keyframes apiresponse_typingdot {
+  0%,
+  44% {
+    transform: translateY(0px);
+  }
+  22% {
+    transform: translateY(-6px);
+  }
+  44% {
+    opacity: 0.2;
+  }
+}

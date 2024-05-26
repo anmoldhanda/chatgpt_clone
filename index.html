@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chatgpt clone</title>
+    <link rel="shortcut icon" href="images/chatgpticon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- =============================== custom css =============================== -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chats_container">
+        <!-- =============================== outgoing chats user's prompt message =============================== -->
+        <!-- <div class="chat outgoing_chats">
+            <div class="chat_maincontentbox">
+                <div class="chat_profile">
+                    <img src="userprofilepic.jpeg" alt="user profile pic" class="userprofilepic">
+                    <h4 class="chat_username_title">you</h4>
+                </div>
+                <div class="chat_contentbox">
+                    <p class="chat_content">hi there</p>
+                </div>
+                <div class="edit_icondiv">
+                    <i class="fa-solid fa-pencil"></i>
+                </div>
+            </div>
+        </div> -->
+        <!-- =============================== incoming chats chatgpt response =============================== -->
+        <!-- <div class="chat incoming_chats">
+            <div class="chat_maincontentbox">
+                <div class="chat_profile">
+                    <img src="chatgpticon.svg" alt="chatgpt profile pic" class="userprofilepic">
+                    <h4 class="chat_username_title">ChatGPT</h4>
+                </div>
+                <div class="chat_contentbox">
+                    <p class="chat_content">hello how can i assist you today?</p>
+                </div>
+                <div class="edit_icondiv">
+                    <i class="fa-solid fa-copy"></i>
+                    <i class="fa-solid fa-thumbs-down"></i>
+                </div>
+            </div>
+        </div> -->
+        <!-- =============================== api response animation =============================== -->
+        <!-- <div class="chat incoming_chats">
+            <div class="chat_maincontentbox">
+                <div class="chat_profile">
+                    <img src="chatgpticon.svg" alt="chatgpt profile pic" class="userprofilepic">
+                    <h4 class="chat_username_title">ChatGPT</h4>
+                </div>
+                <div class="chat_contentbox">
+                    <div class="apiresponse_typing_animation">
+                        <div class="apiresponse_typingdot" style="--animationdelay: 0.2s;"></div>
+                        <div class="apiresponse_typingdot" style="--animationdelay: 0.3s;"></div>
+                        <div class="apiresponse_typingdot" style="--animationdelay: 0.4s;"></div>
+                    </div>
+                </div>
+                <div class="edit_icondiv">
+                    <i class="fa-solid fa-copy"></i>
+                    <i class="fa-solid fa-thumbs-down"></i>
+                </div>
+            </div>
+        </div> -->
+        <div class="prompt_container">
+            <div class="textarea_container">
+                <textarea name="textarea_prompt" id="chat_input_textarea_prompt" placeholder="Message ChatGPT" required></textarea>
+                <i class="fa-solid fa-arrow-up" id="submit_prompticon"></i>
+            </div>
+            <div class="chatgpt_message_container">
+                <small id="chatgpt_message">ChatGPT can make mistakes. Check Important Info.</small>
+            </div>
+        </div>
+    </div>
+    <!-- =============================== custom js =============================== -->
+    <script src="main.js"></script>
+  </body>
+</html>
