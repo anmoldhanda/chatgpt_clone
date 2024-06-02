@@ -4,37 +4,40 @@ const chats_container = document.querySelector(".chats_container");
 let usertext = null;
 
 const get_chat_response = async (usertext) => {
-    const openai_api_key = `api key`;
-    const openai_api_url = `api url`;
+    const openai_api_url = `OPENAI API URL`;
+    const openai_api_key = `OPENAI API KEY`;
     
     const networkrequest_options = {
         method: "POST",
         headers: {
-            "Content-type": "application/json",
+            "Content-Type": "application/json",
             "Authorization": `Bearer ${openai_api_key}`,
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
-            prompt: usertext,
-            temperature: 0.2,
-            max_tokens: 2048,
-            // "Retry-After": 3600,
-            // n: 1,
-            // stop: null,
+            messages: [{
+                role: "user",
+                content: usertext,
+            }],
+            temperature: 0.7,
+            max_tokens: 150,
         })
     }
     try {
         const openai_api_json_response = await fetch(openai_api_url, networkrequest_options);
-        // if(!openai_api_json_response.ok) {
-        //     throw new Error("network request was not successful");
-        // }
+        if(openai_api_json_response.status === 429) {
+            console.log("api rate limit exceeded");
+        }
+        if(!openai_api_json_response.ok) {
+            console.log("network request was not successful");
+        }
         const response_data = await openai_api_json_response.json();
         console.log(response_data);
         return response_data.choices[0].message.content;
     }
     catch(error) {
         console.log(error);
-        // return null;
+        return null;
     }
 }
 
